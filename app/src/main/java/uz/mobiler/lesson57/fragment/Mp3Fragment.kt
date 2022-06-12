@@ -160,6 +160,8 @@ class Mp3Fragment : Fragment(), MediaPlayer.OnPreparedListener {
                 binding.play.setImageResource(R.drawable.play)
                 binding.currentTime.text = "00:00"
                 binding.seekbar.progress = 0
+                binding.imgCard.layoutParams.width = 500
+                binding.imgCard.layoutParams.height = 500
             }
         }
     }
