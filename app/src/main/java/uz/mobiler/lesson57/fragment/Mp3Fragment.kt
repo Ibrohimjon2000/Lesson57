@@ -194,5 +194,12 @@ class Mp3Fragment : Fragment(), MediaPlayer.OnPreparedListener {
     }
 
     override fun onPrepared(p0: MediaPlayer?) {
+        p0?.start()
+        binding.play.setImageResource(R.drawable.pause)
+        val duration = mediaPlayer?.duration
+        if (duration != null) {
+            binding.seekbar.max = duration
+            handler.postDelayed(runnable, 1000)
+        }
     }
 }
