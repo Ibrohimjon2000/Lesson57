@@ -78,8 +78,8 @@ class Mp3Fragment : Fragment(), MediaPlayer.OnPreparedListener {
                 else index++
                 releaseMp()
                 work()
-                imgCard.layoutParams.width = 500
-                imgCard.layoutParams.height = 500
+                imgCard.layoutParams.width = 650
+                imgCard.layoutParams.height = 650
             }
 
             previous.setOnClickListener {
@@ -87,8 +87,8 @@ class Mp3Fragment : Fragment(), MediaPlayer.OnPreparedListener {
                 else index--
                 releaseMp()
                 work()
-                imgCard.layoutParams.width = 500
-                imgCard.layoutParams.height = 500
+                imgCard.layoutParams.width = 650
+                imgCard.layoutParams.height = 650
             }
 
             forward.setOnClickListener {
@@ -196,6 +196,8 @@ class Mp3Fragment : Fragment(), MediaPlayer.OnPreparedListener {
     override fun onPrepared(p0: MediaPlayer?) {
         p0?.start()
         binding.play.setImageResource(R.drawable.pause)
+        binding.imgCard.layoutParams.width = 650
+        binding.imgCard.layoutParams.height = 650
         val duration = mediaPlayer?.duration
         if (duration != null) {
             binding.seekbar.max = duration
